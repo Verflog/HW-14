@@ -1,13 +1,12 @@
 import org.jetbrains.annotations.NotNull;
 
-public class Hufflepuff {
-    private Student student;
+public class Hufflepuff extends Student{
     private int diligence;
     private int loyalty;
     private int honesty;
 
-    public Hufflepuff(Student student, int diligence, int loyalty, int honesty) {
-        this.student = student;
+    public Hufflepuff(String name, int wizardry, int transgression, int diligence, int loyalty, int honesty) {
+        super(name, wizardry, transgression);
         this.diligence = diligence;
         this.loyalty = loyalty;
         this.honesty = honesty;
@@ -25,14 +24,6 @@ public class Hufflepuff {
         else {
             System.out.println("students are equal");
         }
-    }
-
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
     }
 
     public int getDiligence() {
@@ -62,7 +53,9 @@ public class Hufflepuff {
     @Override
     public String toString() {
         return "Hufflepuff{" +
-                "student=" + student +
+                "name=" + getName() +
+                ", wizardry=" + getWizardry() +
+                ", transgression=" + getTransgression() +
                 ", diligence=" + diligence +
                 ", loyalty=" + loyalty +
                 ", honesty=" + honesty +

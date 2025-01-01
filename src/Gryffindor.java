@@ -1,13 +1,12 @@
 import org.jetbrains.annotations.NotNull;
 
-public class Gryffindor {
-    private Student student;
+public class Gryffindor extends Student{
     private int nobility;
     private int honor;
     private int bravery;
 
-    public Gryffindor(Student student, int nobility, int honor, int bravery) {
-        this.student = student;
+    public Gryffindor(String name, int wizardry, int transgression, int nobility, int honor, int bravery) {
+        super(name, wizardry, transgression);
         this.nobility = nobility;
         this.honor = honor;
         this.bravery = bravery;
@@ -25,14 +24,6 @@ public class Gryffindor {
         else {
             System.out.println("students are equal");
         }
-    }
-
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
     }
 
     public int getNobility() {
@@ -62,7 +53,9 @@ public class Gryffindor {
     @Override
     public String toString() {
         return "Gryffindor{" +
-                "student=" + student +
+                "name=" + getName() +
+                ", wizardry=" + getWizardry() +
+                ", transgression=" + getTransgression() +
                 ", nobility=" + nobility +
                 ", honor=" + honor +
                 ", bravery=" + bravery +

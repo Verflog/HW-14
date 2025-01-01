@@ -1,14 +1,13 @@
 import org.jetbrains.annotations.NotNull;
 
-public class Ravenclaw {
-    private Student student;
+public class Ravenclaw extends Student {
     private int intelligence;
     private int wisdom;
     private int wit;
     private int creativity;
 
-    public Ravenclaw(Student student, int intelligence, int wisdom, int wit, int creativity) {
-        this.student = student;
+    public Ravenclaw(String name, int wizardry, int transgression, int intelligence, int wisdom, int wit, int creativity) {
+        super(name, wizardry, transgression);
         this.intelligence = intelligence;
         this.wisdom = wisdom;
         this.wit = wit;
@@ -27,14 +26,6 @@ public class Ravenclaw {
         else {
             System.out.println("students are equal");
         }
-    }
-
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
     }
 
     public int getIntelligence() {
@@ -72,7 +63,9 @@ public class Ravenclaw {
     @Override
     public String toString() {
         return "Ravenclaw{" +
-                "student=" + student +
+                "name=" + getName() +
+                ", wizardry=" + getWizardry() +
+                ", transgression=" + getTransgression() +
                 ", intelligence=" + intelligence +
                 ", wisdom=" + wisdom +
                 ", wit=" + wit +

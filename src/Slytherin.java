@@ -1,15 +1,14 @@
 import org.jetbrains.annotations.NotNull;
 
-public class Slytherin {
-    private Student student;
+public class Slytherin extends Student{
     private int cunning;
     private int determination;
     private int ambition;
     private int resourcefulness;
     private int thirstForPower;
 
-    public Slytherin(Student student, int cunning, int determination, int ambition, int resourcefulness, int thirstForPower) {
-        this.student = student;
+    public Slytherin(String name, int wizardry, int transgression, int cunning, int determination, int ambition, int resourcefulness, int thirstForPower) {
+        super(name, wizardry, transgression);
         this.cunning = cunning;
         this.determination = determination;
         this.ambition = ambition;
@@ -31,14 +30,6 @@ public class Slytherin {
         else {
             System.out.println("students are equal");
         }
-    }
-
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
     }
 
     public int getCunning() {
@@ -84,7 +75,9 @@ public class Slytherin {
     @Override
     public String toString() {
         return "Slytherin{" +
-                "student=" + student +
+                "name=" + getName() +
+                ", wizardry=" + getWizardry() +
+                ", transgression=" + getTransgression() +
                 ", cunning=" + cunning +
                 ", determination=" + determination +
                 ", ambition=" + ambition +
